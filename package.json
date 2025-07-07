@@ -8,7 +8,8 @@
     "test": "jest",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "build": "echo 'Build completed successfully'"
   },
   "keywords": ["ci-cd", "github-actions", "docker"],
   "author": "Studente",
