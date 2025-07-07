@@ -1,6 +1,16 @@
 const request = require('supertest');
 const app = require('../index');
 
+let server;
+
+beforeAll(() => {
+  server = app.listen(0); // Porta 0 per test
+});
+
+afterAll((done) => {
+  server.close(done);
+});
+
 describe('Applicazione CI/CD', () => {
   test('GET / dovrebbe restituire un messaggio di benvenuto', async () => {
     const response = await request(app).get('/');

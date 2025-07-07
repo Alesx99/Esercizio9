@@ -36,11 +36,13 @@ app.get('/api/test', (req, res) => {
   });
 });
 
-// Avvia il server
-app.listen(port, () => {
-  console.log(`✅ Server avviato sulla porta ${port}`);
-  console.log(`🌐 Applicazione disponibile su http://localhost:${port}`);
-  console.log(`🏥 Health check su http://localhost:${port}/health`);
-});
+// Avvia il server solo se non siamo in modalità test
+if (process.env.NODE_ENV !== 'test') {
+  app.listen(port, () => {
+    console.log(`✅ Server avviato sulla porta ${port}`);
+    console.log(`🌐 Applicazione disponibile su http://localhost:${port}`);
+    console.log(`🏥 Health check su http://localhost:${port}/health`);
+  });
+}
 
 module.exports = app; 

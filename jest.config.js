@@ -4,5 +4,6 @@ module.exports = {
   collectCoverage: true,
   coverageDirectory: 'coverage',
   coverageReporters: ['text', 'lcov'],
-  verbose: true
+  verbose: true,
+  setupFilesAfterEnv: ['<rootDir>/test/setup.js']
 }; 
